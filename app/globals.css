@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+:root {
+  --bg-deep: #0A0A0F;
+  --bg-surface: #12121A;
+  --bg-elevated: #1A1A25;
+  --border: #2A2A3A;
+  --text-primary: #E8E8EC;
+  --text-secondary: #8A8A9A;
+  --accent-cyan: #00D4FF;
+  --accent-cyan-dim: #00D4FF20;
+  --bullish: #00FF88;
+  --bearish: #FF3366;
+  --warning: #FFAA00;
+  --amber: #F59E0B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Sora', sans-serif;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3A3A4A;
+}
+
+/* Data / price cells */
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Live pulse dot */
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.pulse-live {
+  animation: pulse-live 2s ease-in-out infinite;
+}
+
+/* Panel grid style */
+.panel-grid {
+  display: grid;
+  grid-template-columns: 64px 1fr 280px;
+  grid-template-rows: 64px 1fr;
+  height: 100vh;
+  gap: 1px;
+  background: var(--border);
+}
